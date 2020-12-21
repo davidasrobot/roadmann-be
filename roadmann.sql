@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2020 at 01:46 PM
+-- Generation Time: Dec 21, 2020 at 02:55 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -63,9 +63,9 @@ CREATE TABLE `about_items` (
 --
 
 INSERT INTO `about_items` (`id`, `image`, `heading`, `text`, `created_at`, `updated_at`) VALUES
-(1, '[{\"download_link\":\"about-items\\\\November2020\\\\gLv8MqLy3nHAmC0QpBOw.svg\",\"original_name\":\"star.svg\"}]', 'Artist Manager', 'Thumbnails takes an array of objects. Each object is a new thumbnail that is created. Each object contains 2 values, the name and scale percentage. The name will be attached to your thumbnail image as an example say the image you uploaded was ABC.', '2020-11-30 12:08:55', '2020-11-30 12:08:55'),
-(2, '[{\"download_link\":\"about-items\\\\November2020\\\\hs3i34e4aA0cEBlkTZ06.svg\",\"original_name\":\"party.svg\"}]', 'Event Organizer', 'Thumbnails takes an array of objects. Each object is a new thumbnail that is created. Each object contains 2 values, the name and scale percentage. The name will be attached to your thumbnail image (as an example say the image you uploaded was ABC.', '2020-11-30 12:09:14', '2020-11-30 12:09:14'),
-(3, '[{\"download_link\":\"about-items\\\\November2020\\\\Fvqlx6ShPP7hAOeTYZZH.svg\",\"original_name\":\"brochure.svg\"}]', 'Publisher', 'Thumbnails takes an array of objects. Each object is a new thumbnail that is created. Each object contains 2 values, the name and scale percentage. The name will be attached to your thumbnail image as an example say the image you uploaded was ABC.', '2020-11-30 12:09:31', '2020-11-30 12:09:31');
+(1, '[{\"download_link\":\"about-items\\\\December2020\\\\AECByr46BRKuqRednxbw.svg\",\"original_name\":\"star.svg\"}]', 'Artist Manager', 'Thumbnails takes an array of objects. Each object is a new thumbnail that is created. Each object contains 2 values, the name and scale percentage. The name will be attached to your thumbnail image as an example say the image you uploaded was ABC.', '2020-11-30 12:08:00', '2020-12-04 12:37:32'),
+(2, '[{\"download_link\":\"about-items\\\\December2020\\\\yT6I8sxjiJwFPyfHFjoJ.svg\",\"original_name\":\"party.svg\"}]', 'Event Organizer', 'Thumbnails takes an array of objects. Each object is a new thumbnail that is created. Each object contains 2 values, the name and scale percentage. The name will be attached to your thumbnail image (as an example say the image you uploaded was ABC.', '2020-11-30 12:09:00', '2020-12-04 12:37:25'),
+(3, '[{\"download_link\":\"about-items\\\\December2020\\\\Ckhdv2NpaHCtH1t0r21n.svg\",\"original_name\":\"brochure.svg\"}]', 'Publisher', 'Thumbnails takes an array of objects. Each object is a new thumbnail that is created. Each object contains 2 values, the name and scale percentage. The name will be attached to your thumbnail image as an example say the image you uploaded was ABC.', '2020-11-30 12:09:00', '2020-12-04 12:37:17');
 
 -- --------------------------------------------------------
 
@@ -80,15 +80,16 @@ CREATE TABLE `artists` (
   `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `artists`
 --
 
-INSERT INTO `artists` (`id`, `image`, `name`, `title`, `text`, `created_at`, `updated_at`) VALUES
-(1, '[{\"download_link\":\"artists\\\\November2020\\\\ivDMA2JThVGPQgQKZOR1.jpg\",\"original_name\":\"jon.jpg\"}]', 'John Angelz', 'Musician / Rock / 90\'s', 'Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. \r\n\r\nnulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper.', '2020-11-30 12:41:11', '2020-11-30 12:41:11');
+INSERT INTO `artists` (`id`, `image`, `name`, `title`, `text`, `created_at`, `updated_at`, `slug`) VALUES
+(1, '[{\"download_link\":\"artists\\\\December2020\\\\F987MIFBXyBqfySdIuwW.png\",\"original_name\":\"artist.png\"}]', 'John Angelz', 'Musician / Rock / 90\'s', 'Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. \r\n\r\nnulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper. Vitae nulla euismod velpretium tellus accumsan nulla nunc euismod ve semper.', '2020-11-30 12:41:00', '2020-12-04 22:55:28', 'john-angelz');
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,7 @@ CREATE TABLE `blogs` (
 INSERT INTO `blogs` (`id`, `slug`, `image`, `title`, `sub_title`, `source`, `date`, `text`, `tag`, `created_at`, `updated_at`) VALUES
 (1, 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing', 'blogs\\November2020\\wttf6YUA3kpAkMC1mmw4.jpg', 'Lorem ipsum dolor sit amet consectetur adipisicing.', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus recusandae eligendi voluptatibus excepturi doloremque totam odit at, reiciendis iste.', 'roadmann.com', '2020-12-15', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>\r\n<p>&nbsp;</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img title=\"lorem ipsum\" src=\"http://localhost:8000/storage/blogs/November2020/gambar.png\" alt=\"lorem ipsum dolor sit amet\" />\r\n<figcaption>lorem ipsum</figcaption>\r\n</figure>\r\n<p>&nbsp;</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>\r\n<p>&nbsp;</p>', 'article, rock, roadmann', '2020-11-30 12:45:23', '2020-11-30 12:45:23'),
 (2, 'lorem-ipsum', 'blogs\\November2020\\JUmu0ICgNVoNba25eqFH.jpg', 'Lorem Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi', 'roadmann', '2020-12-31', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>\r\n<p>&nbsp;</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>', 'roadmann, info', '2020-11-30 12:46:20', '2020-11-30 12:46:20'),
-(3, 'how-to-sing-like-a-pro', 'blogs\\November2020\\gZ7tVHwSoRu9K7u1SEaS.jpg', 'How to sing like a pro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum?', 'roadmann', '2021-01-07', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>\r\n<p>&nbsp;</p>\r\n<p><img src=\"http://localhost:8000/storage/blogs/November2020/concert-768722_1280.jpg\" alt=\"\" /></p>\r\n<p>&nbsp;</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>', 'tutorial', '2020-11-30 12:48:27', '2020-11-30 12:48:27');
+(3, 'how-to-sing-like-a-pro', 'blogs\\November2020\\gZ7tVHwSoRu9K7u1SEaS.jpg', 'How to sing like a pro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum?', 'roadmann', '2021-01-07', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>\r\n<p>&nbsp;</p>\r\n<p><img src=\"http://localhost:8000/storage/blogs/November2020/concert-768722_1280.jpg\" alt=\"\" /></p>\r\n<p>&nbsp;</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem inventore fuga harum? Voluptate sequi delectus temporibus eveniet quasi, minima voluptatibus quibusdam eos ullam? Vel, velit. Explicabo in aliquid quae! Molestias sint corrupti pariatur enim iure quibusdam facere nobis at voluptates dolore! Quas illum saepe velit repudiandae, tempora amet expedita autem at fugiat, beatae obcaecati aliquam, deserunt nihil! Vel atque corporis suscipit quo dolorum, maiores, adipisci quisquam aut sint veniam obcaecati provident minima rem nam hic ducimus distinctio! Sunt saepe libero delectus aspernatur adipisci corrupti eum harum quisquam, vero praesentium consequatur quibusdam ipsa dolor eaque cupiditate ad eos nemo autem!</p>', 'tutorial', '2020-11-30 12:48:00', '2020-12-04 22:55:05');
 
 -- --------------------------------------------------------
 
@@ -133,6 +134,16 @@ CREATE TABLE `contacts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'lorem', 'lorem@lorem.com', 'aksdjaisdaid asdasodjaio', '2020-12-04 22:01:46', '2020-12-04 22:01:46'),
+(2, 'lorem', 'lorem@lorem.com', 'aksdjaisdaid asdasodjaio', '2020-12-04 22:01:55', '2020-12-04 22:01:55'),
+(3, 'lorem', 'lorem@lorem.com', 'aksdjaisdaid asdasodjaio', '2020-12-04 22:03:00', '2020-12-04 22:03:00'),
+(4, 'asdads', 'asdad@asdj.com', 'asdhasodi asjd', '2020-12-04 22:34:37', '2020-12-04 22:34:37');
 
 -- --------------------------------------------------------
 
@@ -183,12 +194,12 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (20, 3, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, NULL, 5),
 (21, 1, 'role_id', 'text', 'Role', 1, 1, 1, 1, 1, 1, NULL, 9),
 (22, 4, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(23, 4, 'caption', 'text', 'Caption', 1, 1, 1, 1, 1, 1, '{}', 2),
-(24, 4, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 3),
-(25, 4, 'text', 'text_area', 'Text', 1, 1, 1, 1, 1, 1, '{}', 4),
-(26, 4, 'link', 'text', 'Link', 1, 1, 1, 1, 1, 1, '{}', 5),
-(27, 4, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
-(28, 4, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(23, 4, 'caption', 'text', 'Caption', 1, 1, 1, 1, 1, 1, '{}', 3),
+(24, 4, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 4),
+(25, 4, 'text', 'text_area', 'Text', 1, 1, 1, 1, 1, 1, '{}', 5),
+(26, 4, 'link', 'text', 'Link', 1, 1, 1, 1, 1, 1, '{}', 6),
+(27, 4, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
+(28, 4, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
 (29, 5, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (30, 5, 'heading', 'text', 'Heading', 1, 1, 1, 1, 1, 1, '{}', 2),
 (31, 5, 'text', 'text_area', 'Text', 1, 1, 1, 1, 1, 1, '{}', 3),
@@ -201,20 +212,20 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (38, 6, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
 (39, 6, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
 (40, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(41, 7, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
-(42, 7, 'sub_title', 'text', 'Sub Title', 1, 1, 1, 1, 1, 1, '{}', 3),
-(43, 7, 'date', 'date', 'Date', 1, 1, 1, 1, 1, 1, '{}', 4),
-(44, 7, 'location', 'text', 'Location', 1, 1, 1, 1, 1, 1, '{}', 5),
-(45, 7, 'link', 'text', 'Link', 1, 1, 1, 1, 1, 1, '{}', 6),
-(46, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
-(47, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(41, 7, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 3),
+(42, 7, 'sub_title', 'text', 'Sub Title', 1, 1, 1, 1, 1, 1, '{}', 4),
+(43, 7, 'date', 'date', 'Date', 1, 1, 1, 1, 1, 1, '{}', 5),
+(44, 7, 'location', 'text', 'Location', 1, 1, 1, 1, 1, 1, '{}', 6),
+(45, 7, 'link', 'text', 'Link', 1, 1, 1, 1, 1, 1, '{}', 7),
+(46, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 8),
+(47, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9),
 (48, 8, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (49, 8, 'image', 'file', 'Image', 1, 1, 1, 1, 1, 1, '{}', 2),
 (50, 8, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 3),
-(51, 8, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 4),
-(52, 8, 'text', 'text_area', 'Text', 1, 1, 1, 1, 1, 1, '{}', 5),
-(53, 8, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
-(54, 8, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(51, 8, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 5),
+(52, 8, 'text', 'text_area', 'Text', 1, 1, 1, 1, 1, 1, '{}', 6),
+(53, 8, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
+(54, 8, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
 (55, 9, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (56, 9, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true}}', 4),
 (57, 9, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1440\",\"height\":null},\"quality\":\"70%\",\"upsize\":true}', 2),
@@ -231,7 +242,19 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (68, 10, 'phone', 'number', 'Phone', 1, 1, 1, 1, 1, 1, '{}', 3),
 (69, 10, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 4),
 (70, 10, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
-(71, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6);
+(71, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(72, 4, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{}', 2),
+(73, 7, 'banner', 'image', 'Banner', 1, 1, 1, 1, 1, 1, '{}', 2),
+(74, 7, 'online', 'checkbox', 'Online', 1, 1, 1, 1, 1, 1, '{\"online\":\"1\",\"offline\":\"0\",\"checked\":true}', 10),
+(75, 11, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(76, 11, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 2),
+(77, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(78, 12, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 2),
+(79, 12, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 3),
+(80, 12, 'message', 'text_area', 'Message', 1, 1, 1, 1, 1, 1, '{}', 4),
+(81, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(82, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(83, 8, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name\",\"forceUpdate\":true}}', 4);
 
 -- --------------------------------------------------------
 
@@ -265,13 +288,15 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2020-11-30 11:15:06', '2020-11-30 11:15:06'),
 (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2020-11-30 11:15:06', '2020-11-30 11:15:06'),
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2020-11-30 11:15:06', '2020-11-30 11:15:06'),
-(4, 'heroes', 'heroes', 'Hero', 'Heroes', 'voyager-photo', 'App\\Hero', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-11-30 11:48:20', '2020-11-30 11:48:20'),
+(4, 'heroes', 'heroes', 'Hero', 'Heroes', 'voyager-photo', 'App\\Hero', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-30 11:48:20', '2020-12-04 10:33:49'),
 (5, 'abouts', 'abouts', 'About', 'Abouts', NULL, 'App\\About', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-11-30 11:48:44', '2020-11-30 11:48:44'),
 (6, 'about_items', 'about-items', 'About Item', 'About Items', NULL, 'App\\AboutItem', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-30 11:54:13', '2020-11-30 12:08:24'),
-(7, 'events', 'events', 'Event', 'Events', 'voyager-youtube-play', 'App\\Event', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-11-30 11:57:01', '2020-11-30 11:57:01'),
-(8, 'artists', 'artists', 'Artist', 'Artists', 'voyager-star', 'App\\Artist', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-30 11:58:47', '2020-11-30 12:40:30'),
+(7, 'events', 'events', 'Event', 'Events', 'voyager-youtube-play', 'App\\Event', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-30 11:57:01', '2020-12-04 20:26:52'),
+(8, 'artists', 'artists', 'Artist', 'Artists', 'voyager-star', 'App\\Artist', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-30 11:58:47', '2020-12-04 22:55:19'),
 (9, 'blogs', 'blogs', 'Blog', 'Blogs', 'voyager-news', 'App\\Blog', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-30 12:03:15', '2020-11-30 12:42:00'),
-(10, 'roadmanns', 'roadmanns', 'Roadmann', 'Roadmanns', 'voyager-play', 'App\\Roadmann', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-11-30 12:03:58', '2020-11-30 12:03:58');
+(10, 'roadmanns', 'roadmanns', 'Roadmann', 'Roadmanns', 'voyager-play', 'App\\Roadmann', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-11-30 12:03:58', '2020-11-30 12:03:58'),
+(11, 'subscribers', 'subscribers', 'Subscriber', 'Subscribers', NULL, 'App\\Subscriber', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-12-04 22:07:09', '2020-12-04 22:07:09'),
+(12, 'contacts', 'contacts', 'Contact', 'Contacts', NULL, 'App\\Contact', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-12-04 22:07:33', '2020-12-04 22:07:33');
 
 -- --------------------------------------------------------
 
@@ -287,18 +312,20 @@ CREATE TABLE `events` (
   `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `banner` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `online` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `sub_title`, `date`, `location`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'Rockinterview', '1st Episode of Rockinterview', '2020-12-23', 'Youtube', 'https://youtube.com/roadmann', '2020-11-30 12:10:32', '2020-11-30 12:10:32'),
-(2, 'Rockinterview', '2nd Episode of Rockinterview', '2021-01-06', 'Youtube', 'https://www.youtube.com/channel/UCWZI1rSfvLMLKBWpTEgGbXg', '2020-11-30 12:11:12', '2020-11-30 12:11:12'),
-(3, 'Rockinterview', '3rd Episode of Rockinterview', '2021-01-21', 'Youtube', 'https://www.youtube.com/channel/UCWZI1rSfvLMLKBWpTEgGbXg', '2020-11-30 12:11:45', '2020-11-30 12:11:45'),
-(4, 'Rock Concert', 'Roadmann Rock Concert', '2021-02-04', 'Gelora Bung Karno Pintu Selatan', '#link', '2020-11-30 12:15:47', '2020-11-30 12:15:47');
+INSERT INTO `events` (`id`, `title`, `sub_title`, `date`, `location`, `link`, `created_at`, `updated_at`, `banner`, `online`) VALUES
+(1, 'Rockinterview', '1st Episode of Rockinterview', '2020-12-23', 'Youtube', 'https://youtube.com/roadmann', '2020-11-30 12:10:32', '2020-11-30 12:10:32', 'events\\December2020\\bAbIzWEcAEUvXibxGQHc.png', 1),
+(2, 'Rockinterview', '2nd Episode of Rockinterview', '2021-01-06', 'Youtube', 'https://www.youtube.com/channel/UCWZI1rSfvLMLKBWpTEgGbXg', '2020-11-30 12:11:12', '2020-11-30 12:11:12', 'events\\December2020\\bAbIzWEcAEUvXibxGQHc.png', 1),
+(3, 'Rockinterview', '3rd Episode of Rockinterview', '2021-01-21', 'Youtube', 'https://www.youtube.com/channel/UCWZI1rSfvLMLKBWpTEgGbXg', '2020-11-30 12:11:45', '2020-11-30 12:11:45', 'events\\December2020\\bAbIzWEcAEUvXibxGQHc.png', 1),
+(4, 'Rock Concert', 'Roadmann Rock Concert', '2021-02-04', 'Gelora Bung Karno Pintu Selatan', '#link', '2020-11-30 12:15:00', '2020-12-04 20:27:12', 'events\\December2020\\bAbIzWEcAEUvXibxGQHc.png', 0);
 
 -- --------------------------------------------------------
 
@@ -328,15 +355,16 @@ CREATE TABLE `heroes` (
   `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `heroes`
 --
 
-INSERT INTO `heroes` (`id`, `caption`, `title`, `text`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'Rockinterview', 'John Angelz', 'lorem ipsum dolor sit amet The image input has many options. By default if you do not specify any options no problem... Your image will still be uploaded. But, if you want to resize an image, set', 'https://youtube.com', '2020-11-30 12:07:05', '2020-11-30 12:07:05');
+INSERT INTO `heroes` (`id`, `caption`, `title`, `text`, `link`, `created_at`, `updated_at`, `image`) VALUES
+(1, 'Rockinterview', 'John Angelz', 'lorem ipsum dolor sit amet The image input has many options. By default if you do not specify any options no problem... Your image will still be uploaded. But, if you want to resize an image, set', 'https://youtube.com', '2020-11-30 12:07:00', '2020-12-04 10:34:37', 'heroes\\December2020\\wAdn0HLSy4WsiDD3Aui3.png');
 
 -- --------------------------------------------------------
 
@@ -402,7 +430,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (15, 1, 'Events', '', '_self', 'voyager-youtube-play', NULL, NULL, 18, '2020-11-30 11:57:01', '2020-11-30 11:57:01', 'voyager.events.index', NULL),
 (16, 1, 'Artists', '', '_self', 'voyager-star', NULL, NULL, 19, '2020-11-30 11:58:47', '2020-11-30 11:58:47', 'voyager.artists.index', NULL),
 (17, 1, 'Blogs', '', '_self', 'voyager-news', NULL, NULL, 20, '2020-11-30 12:03:15', '2020-11-30 12:03:15', 'voyager.blogs.index', NULL),
-(18, 1, 'Roadmanns', '', '_self', 'voyager-play', NULL, NULL, 21, '2020-11-30 12:03:58', '2020-11-30 12:03:58', 'voyager.roadmanns.index', NULL);
+(18, 1, 'Roadmanns', '', '_self', 'voyager-play', NULL, NULL, 21, '2020-11-30 12:03:58', '2020-11-30 12:03:58', 'voyager.roadmanns.index', NULL),
+(19, 1, 'Subscribers', '', '_self', NULL, NULL, NULL, 22, '2020-12-04 22:07:09', '2020-12-04 22:07:09', 'voyager.subscribers.index', NULL),
+(20, 1, 'Contacts', '', '_self', NULL, NULL, NULL, 23, '2020-12-04 22:07:33', '2020-12-04 22:07:33', 'voyager.contacts.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -544,7 +574,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (58, 'read_roadmanns', 'roadmanns', '2020-11-30 12:03:58', '2020-11-30 12:03:58'),
 (59, 'edit_roadmanns', 'roadmanns', '2020-11-30 12:03:58', '2020-11-30 12:03:58'),
 (60, 'add_roadmanns', 'roadmanns', '2020-11-30 12:03:58', '2020-11-30 12:03:58'),
-(61, 'delete_roadmanns', 'roadmanns', '2020-11-30 12:03:58', '2020-11-30 12:03:58');
+(61, 'delete_roadmanns', 'roadmanns', '2020-11-30 12:03:58', '2020-11-30 12:03:58'),
+(62, 'browse_subscribers', 'subscribers', '2020-12-04 22:07:09', '2020-12-04 22:07:09'),
+(63, 'read_subscribers', 'subscribers', '2020-12-04 22:07:09', '2020-12-04 22:07:09'),
+(64, 'edit_subscribers', 'subscribers', '2020-12-04 22:07:09', '2020-12-04 22:07:09'),
+(65, 'add_subscribers', 'subscribers', '2020-12-04 22:07:09', '2020-12-04 22:07:09'),
+(66, 'delete_subscribers', 'subscribers', '2020-12-04 22:07:09', '2020-12-04 22:07:09'),
+(67, 'browse_contacts', 'contacts', '2020-12-04 22:07:33', '2020-12-04 22:07:33'),
+(68, 'read_contacts', 'contacts', '2020-12-04 22:07:33', '2020-12-04 22:07:33'),
+(69, 'edit_contacts', 'contacts', '2020-12-04 22:07:33', '2020-12-04 22:07:33'),
+(70, 'add_contacts', 'contacts', '2020-12-04 22:07:33', '2020-12-04 22:07:33'),
+(71, 'delete_contacts', 'contacts', '2020-12-04 22:07:33', '2020-12-04 22:07:33');
 
 -- --------------------------------------------------------
 
@@ -622,7 +662,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (58, 1),
 (59, 1),
 (60, 1),
-(61, 1);
+(61, 1),
+(62, 1),
+(63, 1),
+(64, 1),
+(65, 1),
+(66, 1),
+(67, 1),
+(68, 1),
+(69, 1),
+(70, 1),
+(71, 1);
 
 -- --------------------------------------------------------
 
@@ -700,6 +750,26 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribers`
+--
+
+CREATE TABLE `subscribers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subscribers`
+--
+
+INSERT INTO `subscribers` (`id`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'teasd@asdoi.com', '2020-12-04 22:47:59', '2020-12-04 22:47:59');
 
 -- --------------------------------------------------------
 
@@ -885,6 +955,12 @@ ALTER TABLE `settings`
   ADD UNIQUE KEY `settings_key_unique` (`key`);
 
 --
+-- Indexes for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `translations`
 --
 ALTER TABLE `translations`
@@ -939,19 +1015,19 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -981,7 +1057,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -993,7 +1069,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `roadmanns`
@@ -1012,6 +1088,12 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `translations`
